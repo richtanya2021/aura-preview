@@ -315,6 +315,8 @@ body{background:#101618;overflow-x:hidden}
  .moss-card-back strong{font-size:1.85rem;letter-spacing:.11em}
  .moss-card-back>span{font-size:clamp(.83rem,3.4vw,1rem)}
  .moss-flip-trigger{font-size:.78rem;padding:.48rem .85rem}
+ /* SILT/MOSS video bottles end near 86svh; keep the trigger below them at 89svh. */
+ .moss-card:is([data-scent="silt"],[data-scent="moss"]):not(.flipped) .moss-flip-trigger{top:calc(38svh + min(27svh,235px))}
  .moss-flip-close{padding:.55rem .85rem;min-height:40px}
 }
 @media(max-height:550px) and (min-width:701px){.moss-card-back{padding:15px 18px;gap:.65rem}.moss-card-back strong{font-size:1.8rem}.moss-card-back>span{font-size:.85rem}.moss-card-back small{font-size:.55rem}}
