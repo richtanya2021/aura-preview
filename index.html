@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#E9E4D8">
+  <meta name="description" content="AURA — учебный концепт арт-парфюмерного бренда. Четыре воображаемых аромата и пространство для ощущений.">
+  <title>AURA — Art Perfume</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" aria-label="AURA — наверх">AURA<span class="wordmark-dot">.</span></a>
+    <span class="header-note">ART PERFUME / КОНЦЕПТ</span>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+      <a href="#philosophy">Философия</a>
+      <a href="#collection">Коллекция</a>
+      <a href="#craft">Искусство создания</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="aura-experience" id="experience" aria-label="Миры AURA">
+      <div class="aura-world aura-city" id="aura-city">
+        <picture class="aura-poster"><source media="(max-width: 700px)" srcset="AURA — четыре состояния природы посреди мегаполиса mobil.png"><img src="AURA — четыре состояния природы посреди мегаполиса web.png" alt="" aria-hidden="true"></picture>
+        <video class="aura-city-video aura-video-desktop" autoplay muted loop playsinline preload="metadata" poster="AURA — четыре состояния природы посреди мегаполиса web.png" aria-hidden="true"><source src="AURA_город_desktop_LOOP_TEST.mp4" type="video/mp4"></video>
+        <video class="aura-city-video aura-video-mobile" autoplay muted loop playsinline preload="metadata" poster="AURA — четыре состояния природы посреди мегаполиса mobil.png" aria-hidden="true"><source src="AURA_город_mobile_LOOP_TEST.mp4" type="video/mp4"></video>
+        <div class="aura-city-title"><span>AURA / ART PERFUME</span><h1>Природа за пределами реальности.</h1><p>Выбери аромат</p></div>
+        <div class="aura-hotspots" aria-label="Выбор аромата">
+          <button class="aura-hotspot aura-hotspot-original" data-world="original" aria-label="Открыть мир ORIGINAL"><span>ORIGINAL</span></button>
+          <button class="aura-hotspot aura-hotspot-silt" data-world="silt" aria-label="Открыть мир SILT"><span>SILT</span></button>
+          <button class="aura-hotspot aura-hotspot-veil" data-world="veil" aria-label="Открыть мир VEIL"><span>VEIL</span></button>
+          <button class="aura-hotspot aura-hotspot-moss" data-world="moss" aria-label="Открыть мир MOSS"><span>MOSS</span></button>
+        </div>
+      </div>
+      <div class="aura-world aura-nature" id="aura-nature" hidden>
+        <picture class="aura-nature-picture" id="aura-nature-picture">
+          <source id="aura-nature-mobile" media="(max-width: 700px)" srcset="ORIGINALmobil.png">
+          <img id="aura-nature-image" src="ORIGINAL web.png" alt="Аромат ORIGINAL среди осеннего леса">
+        </picture>
+        <video id="aura-moss-desktop" class="aura-moss-video aura-moss-video-desktop" muted loop playsinline preload="none" poster="MOSS web.png" aria-hidden="true"><source src="MOSS web.mp4" type="video/mp4"></video>
+        <video id="aura-moss-mobile" class="aura-moss-video aura-moss-video-mobile" muted loop playsinline preload="none" poster="MOSS mobil.png" aria-hidden="true"><source src="MOSS mobil.mp4" type="video/mp4"></video>
+        <video class="aura-silt-video aura-silt-video-desktop" muted loop playsinline preload="none" poster="SILT web.png" aria-hidden="true"><source src="SILT — The Wild Mineral Current web.mp4" type="video/mp4"></video>
+        <video class="aura-silt-video aura-silt-video-mobile" muted loop playsinline preload="none" poster="SILT mobil.png" aria-hidden="true"><source src="SILT — The Wild Mineral Current web mobil.mp4" type="video/mp4"></video>
+        <video class="aura-extra-video aura-extra-original aura-extra-desktop" muted loop playsinline preload="none" poster="ORIGINAL web.png" aria-hidden="true"><source src="ORIGINAL — The Golden Memory web.mp4?v=20261011-2003" type="video/mp4"></video>
+        <video class="aura-extra-video aura-extra-original aura-extra-mobile" muted loop playsinline preload="none" poster="ORIGINALmobil.png" aria-hidden="true"><source src="ORIGINAL — The Golden Memory mobil.mp4" type="video/mp4"></video>
+        <video class="aura-extra-video aura-extra-veil aura-extra-desktop" muted loop playsinline preload="none" poster="VEIL web.png" aria-hidden="true"><source src="VEIL — The Weightless Passage gemini web.mp4" type="video/mp4"></video>
+        <video class="aura-extra-video aura-extra-veil aura-extra-mobile" muted loop playsinline preload="none" poster="VEIL mobil.png" aria-hidden="true"><source src="VEIL — The Weightless Passage gemini mobil.mp4" type="video/mp4"></video>
+<img class="moss-no-bottle-bg" src="MOSS web без флакона.png" alt="" aria-hidden="true">
+        <div id="moss-card" class="moss-card" hidden><button type="button" class="moss-flip-trigger" id="moss-flip-trigger" aria-expanded="false">Узнать аромат <span aria-hidden="true">↻</span></button><div class="moss-card-stage"><div class="moss-card-inner"><div class="moss-card-front" aria-hidden="true"></div><div class="moss-card-back"><small>AURA / BOTANICAL</small><strong>MOSS</strong><span>Глубина зелёного пространства после тихого ливня. Влажная листва, прохлада и мягкая тень джунглей.</span><button class="moss-flip-close" id="moss-flip-close" type="button">↶ Закрыть</button></div></div></div><i class="moss-card-leaf" aria-hidden="true"></i></div>
+        <button type="button" class="aura-back" id="aura-back" aria-label="Вернуться к четырём ароматам">← <span>Назад к коллекции</span></button>
+        <p class="aura-nature-name" id="aura-nature-name">ORIGINAL</p>
+      </div>
+    </section>
+    <section class="philosophy section-shell" id="philosophy" aria-labelledby="philosophy-title">
+      <div class="section-heading">
+        <p class="eyebrow">01 / ФИЛОСОФИЯ</p>
+        <h2 id="philosophy-title">То, что остаётся<br><em>после слов.</em></h2>
+      </div>
+      <div class="philosophy-layout">
+        <div class="philosophy-art art-surface" role="img" aria-label="CSS-заполнитель: вертикальная композиция с камнем и органической линией. Будущее изображение не утверждено.">
+          <div class="philosophy-arch"></div>
+          <div class="philosophy-orbit"></div>
+          <div class="philosophy-pebble"></div>
+          <span class="placeholder-label">CSS-ЗАПОЛНИТЕЛЬ · ВИЗУАЛ ФИЛОСОФИИ</span>
+        </div>
+        <div class="philosophy-copy">
+          <span class="tiny-symbol" aria-hidden="true">✳</span>
+          <p class="lead">Аромат нельзя удержать взглядом. Но можно представить его как пространство, в которое хочется войти.</p>
+          <p>Для AURA это отправная точка: не описание нот, а образ. Тихая поверхность воды. Тень на камне. Почти невидимое движение воздуха.</p>
+          <p class="small-note">AURA — вымышленный бренд, созданный как учебный дизайн-проект.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection section-shell" id="collection" aria-labelledby="collection-title">
+      <div class="collection-intro">
+        <div>
+          <p class="eyebrow">02 / КОЛЛЕКЦИЯ</p>
+          <h2 id="collection-title">Три состояния.<br><em>Три пространства.</em></h2>
+        </div>
+        <p>Три вымышленных аромата как короткие истории. Нажми на карточку, чтобы раскрыть её образ.</p>
+      </div>
+      <div class="cards">
+        <article class="scent-card" data-scent>
+          <div class="card-art card-art-one art-surface" role="img" aria-label="CSS-заполнитель для аромата Silt: абстрактная каменная форма и круглая стеклянная сфера.">
+            <div class="card-disc"></div><div class="card-form"></div><div class="card-glass"></div>
+            <span class="placeholder-label">CSS-ЗАПОЛНИТЕЛЬ · SILT</span>
+          </div>
+          <div class="card-meta"><span>01 / МИНЕРАЛЬНЫЙ ОБРАЗ</span><span>CONCEPT</span></div>
+          <h3>SILT</h3>
+          <p class="card-summary">Тишина мокрого камня и прохладный след воды.</p>
+          <button class="detail-toggle text-link" type="button" aria-expanded="false" aria-controls="detail-silt">Исследовать образ <span aria-hidden="true">+</span></button>
+          <div class="card-detail" id="detail-silt" hidden><p>Представь берег после дождя: гладкая галька ещё хранит тепло, а воздух уже стал прозрачнее. Это художественный образ, а не описание состава.</p></div>
+        </article>
+        <article class="scent-card" data-scent>
+          <div class="card-art card-art-two art-surface" role="img" aria-label="CSS-заполнитель для аромата Veil: складчатая абстрактная форма и мягкая тень.">
+            <div class="card-disc"></div><div class="card-form"></div><div class="card-glass"></div>
+            <span class="placeholder-label">CSS-ЗАПОЛНИТЕЛЬ · VEIL</span>
+          </div>
+          <div class="card-meta"><span>02 / ВОЗДУШНЫЙ ОБРАЗ</span><span>CONCEPT</span></div>
+          <h3>VEIL</h3>
+          <p class="card-summary">Пауза между светом и тенью, мягкая и невесомая.</p>
+          <button class="detail-toggle text-link" type="button" aria-expanded="false" aria-controls="detail-veil">Исследовать образ <span aria-hidden="true">+</span></button>
+          <div class="card-detail" id="detail-veil" hidden><p>Полупрозрачная завеса, движение ткани и рассеянный утренний свет. История о близости, которую не нужно объяснять.</p></div>
+        </article>
+        <article class="scent-card" data-scent>
+          <div class="card-art card-art-three art-surface" role="img" aria-label="CSS-заполнитель для аромата Moss: органическая дуга и тёмная ботаническая форма.">
+            <div class="card-disc"></div><div class="card-form"></div><div class="card-glass"></div>
+            <span class="placeholder-label">CSS-ЗАПОЛНИТЕЛЬ · MOSS</span>
+          </div>
+          <div class="card-meta"><span>03 / БОТАНИЧЕСКИЙ ОБРАЗ</span><span>CONCEPT</span></div>
+          <h3>MOSS</h3>
+          <p class="card-summary">Глубина зелёного пространства после тихого ливня.</p>
+          <button class="detail-toggle text-link" type="button" aria-expanded="false" aria-controls="detail-moss">Исследовать образ <span aria-hidden="true">+</span></button>
+          <div class="card-detail" id="detail-moss" hidden><p>Влажная зелень, прохлада и плотная лесная тень. Концепция строится вокруг ощущения, а не подтверждённых парфюмерных ингредиентов.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="craft" id="craft" aria-labelledby="craft-title">
+      <div class="craft-art art-surface" role="img" aria-label="CSS-заполнитель: абстрактная композиция из кругов и скульптурной формы для раздела об искусстве создания.">
+        <div class="craft-ring"></div><div class="craft-sculpture"></div><div class="craft-pool"></div>
+        <span class="placeholder-label">CSS-ЗАПОЛНИТЕЛЬ · ХУДОЖЕСТВЕННАЯ КОМПОЗИЦИЯ</span>
+      </div>
+      <div class="craft-copy">
+        <p class="eyebrow">03 / ИСКУССТВО СОЗДАНИЯ</p>
+        <h2 id="craft-title">Сначала —<br><em>чувство.</em></h2>
+        <p class="lead">Мы начинаем с вопроса: как выглядело бы ощущение, если бы у него было тело?</p>
+        <p>В этом учебном концепте формы, цвет и текст исследуют возможный визуальный язык арт-парфюмерии. Реальные формулы, производство и материалы флаконов здесь не заявлены.</p>
+        <span class="craft-mark">AURA / A STUDY IN SENSATION</span>
+      </div>
+    </section>
+
+    <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">04 / КОНТАКТЫ</p>
+        <h2 id="contact-title">Продолжим<br><em>воображать?</em></h2>
+        <p class="contact-note">AURA пока существует как учебный проект. Эта форма показывает будущий сценарий знакомства с брендом.</p>
+      </div>
+      <form class="demo-form" id="demo-form" novalidate>
+        <p class="form-warning">Демонстрация: форма ничего не отправляет и не сохраняет. Не вводи личные данные.</p>
+        <label for="scent-choice">Какой образ тебе ближе?</label>
+        <select id="scent-choice" name="scent" required>
+          <option value="">Выбери аромат</option>
+          <option value="SILT">SILT — камень и вода</option>
+          <option value="VEIL">VEIL — свет и воздух</option>
+          <option value="MOSS">MOSS — зелёная глубина</option>
+        </select>
+        <button class="form-button" type="submit">Показать отклик <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="#top" aria-label="AURA — наверх">AURA<span class="wordmark-dot">.</span></a>
+    <p>Учебный концепт. Вымышленный бренд, ароматы и визуальные сцены.</p>
+    <a href="#top">Наверх ↑</a>
+    <span>© 2026 AURA / ART PERFUME</span>
+  </footer>
+</body>
+</html>
