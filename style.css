@@ -278,6 +278,15 @@ body{background:#101618;overflow-x:hidden}
 @media(max-width:700px){.aura-nature.aura-show-original .aura-extra-original.aura-extra-desktop,.aura-nature.aura-show-veil .aura-extra-veil.aura-extra-desktop{display:none}.aura-nature.aura-show-original .aura-extra-original.aura-extra-mobile,.aura-nature.aura-show-veil .aura-extra-veil.aura-extra-mobile{display:block}}
 @media(prefers-reduced-motion:reduce){.aura-extra-video{display:none!important}}
 
+/* Mobile hit regions follow the 9:16 city image after object-fit:cover. */
+@media(max-width:700px){
+ .aura-hotspots{inset:0 auto auto 50%;width:max(100%,56.25svh);height:100%;transform:translateX(-50%)}
+ .aura-hotspot{width:15.5%}
+ .aura-hotspot-original{left:21.6%}
+ .aura-hotspot-silt{left:39.2%}
+ .aura-hotspot-veil{left:61.6%}
+ .aura-hotspot-moss{left:80.6%}
+}
 /* Shared fragrance cards — MOSS geometry and accepted timing. */
 .moss-card{--card-tint:31,65,44;--card-text:#f3f6ed;position:absolute;z-index:4;left:50%;top:50%;width:clamp(205px,20vw,285px);height:min(clamp(430px,69vh,665px),calc(100svh - 110px));transform:translate(-50%,-50%);perspective:950px;pointer-events:none;color:var(--card-text)}
 .moss-card[hidden]{display:none!important}
@@ -318,6 +327,10 @@ body{background:#101618;overflow-x:hidden}
  /* SILT/MOSS video bottles end near 86svh; keep the trigger below them at 89svh. */
  .moss-card:is([data-scent="silt"],[data-scent="moss"]):not(.flipped) .moss-flip-trigger{top:calc(38svh + min(27svh,235px))}
  .moss-flip-close{padding:.55rem .85rem;min-height:40px}
+}
+/* VEIL's desktop video bottle extends below the shared card geometry. */
+@media(min-width:701px){
+ .moss-card[data-scent="veil"] .moss-flip-trigger{top:calc(43svh + min(clamp(215px,34.5vh,332.5px),calc(50svh - 55px)))}
 }
 @media(max-height:550px) and (min-width:701px){.moss-card-back{padding:15px 18px;gap:.65rem}.moss-card-back strong{font-size:1.8rem}.moss-card-back>span{font-size:.85rem}.moss-card-back small{font-size:.55rem}}
 @media(prefers-reduced-motion:reduce){.moss-card-inner,.scent-clean-background{transition:none}.moss-card-leaf{animation:none!important}}
