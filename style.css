@@ -278,72 +278,44 @@ body{background:#101618;overflow-x:hidden}
 @media(max-width:700px){.aura-nature.aura-show-original .aura-extra-original.aura-extra-desktop,.aura-nature.aura-show-veil .aura-extra-veil.aura-extra-desktop{display:none}.aura-nature.aura-show-original .aura-extra-original.aura-extra-mobile,.aura-nature.aura-show-veil .aura-extra-veil.aura-extra-mobile{display:block}}
 @media(prefers-reduced-motion:reduce){.aura-extra-video{display:none!important}}
 
-/* MOSS interaction prototype */
-.moss-card{position:absolute;z-index:3;left:50%;top:51%;width:clamp(145px,18vw,290px);height:clamp(270px,53vh,550px);transform:translate(-50%,-50%);perspective:950px;pointer-events:none}
+/* Shared fragrance cards — MOSS geometry and accepted timing. */
+.moss-card{--card-tint:31,65,44;--card-text:#f3f6ed;position:absolute;z-index:4;left:50%;top:50%;width:clamp(205px,20vw,285px);height:min(clamp(430px,69vh,665px),calc(100svh - 110px));transform:translate(-50%,-50%);perspective:950px;pointer-events:none;color:var(--card-text)}
 .moss-card[hidden]{display:none!important}
-.moss-card-button{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;color:#f6f7f1;padding:0;pointer-events:auto;cursor:pointer}
-.moss-card-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.7,.2,1)}
-.moss-card.flipped .moss-card-inner{transform:rotateY(180deg)}
-.moss-card-front,.moss-card-back{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:23px}
-.moss-card-front{background:transparent}
-.moss-card-hint{font:400 .75rem Georgia,serif;position:absolute;bottom:0;background:#142c2290;border-radius:99px;padding:.35rem .7rem;opacity:0}
-.moss-card-button:hover .moss-card-hint,.moss-card-button:focus-visible .moss-card-hint{opacity:1}
-.moss-card-back{transform:rotateY(180deg);background:linear-gradient(150deg,rgba(24,45,32,.94),rgba(55,81,58,.91));border:1px solid #d4ead057;backdrop-filter:blur(8px);box-shadow:0 14px 38px #0005;padding:clamp(15px,2vw,28px);text-align:center;gap:1.1rem}
-.moss-card-back small{font:400 .65rem Georgia,serif;letter-spacing:.15em;color:#c5dac0}
-.moss-card-back strong{font:400 clamp(1.9rem,2.7vw,3rem) Georgia,serif;letter-spacing:.15em}
-.moss-card-back>span{font:400 clamp(.83rem,1.1vw,1.07rem)/1.6 Georgia,serif}
-.moss-card-back em{font:400 .75rem Georgia,serif;opacity:.75;margin-top:auto}
-.moss-card-leaf{position:absolute;left:18%;top:28%;width:18px;height:9px;background:#8fae85;border-radius:100% 0;opacity:0;pointer-events:none}
-.moss-card.turning .moss-card-leaf{animation:moss-swish .85s ease-out}
-@keyframes moss-swish{15%{opacity:.8}80%{opacity:.5;transform:translate(-35px,-25px) rotate(-50deg)}100%{opacity:0;transform:translate(-45px,-35px) rotate(-65deg)}}
-@media(max-width:700px){.moss-card{width:clamp(160px,53vw,260px);height:clamp(270px,49svh,470px)}.moss-card-back{gap:.7rem}.moss-card-back>span{font-size:clamp(.83rem,3.4vw,1rem)}.moss-card-hint{opacity:.8}}
-@media(prefers-reduced-motion:reduce){.moss-card-inner{transition:none}.moss-card-leaf{animation:none!important}}
-
-/* MOSS desktop refinement — distinct trigger, narrower card, no object overlay hints */
-@media(min-width:701px){
-.moss-card{left:50%;top:50%;width:clamp(205px,20vw,285px);height:clamp(430px,69vh,665px);transform:translate(-50%,-50%);pointer-events:none}
-.moss-flip-trigger{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(22,46,33,.35);border:1px solid rgba(225,241,218,.3);border-radius:999px;color:#fff;padding:.47rem 1.05rem;white-space:nowrap;letter-spacing:.06em;font:400 .86rem Georgia,serif;pointer-events:auto;cursor:pointer;z-index:8}
-.moss-flip-trigger:hover{background:rgba(26,56,37,.58)}
-.moss-card.flipped .moss-flip-trigger{opacity:0;pointer-events:none}
+.moss-card[data-scent="original"]{--card-tint:101,65,26;--card-text:#fff7e9}
+.moss-card[data-scent="silt"]{--card-tint:32,57,76;--card-text:#edf6ff}
+.moss-card[data-scent="veil"]{--card-tint:57,68,79;--card-text:#f4f7fb}
 .moss-card-stage{position:absolute;inset:0;pointer-events:none}
 .moss-card.flipped .moss-card-stage{pointer-events:auto}
-.moss-card-inner{transition:transform .85s cubic-bezier(.2,.7,.2,1)}
-.moss-card-back{padding:24px 20px;background:linear-gradient(150deg,rgba(30,61,42,.86),rgba(39,69,48,.85));backdrop-filter:blur(35px);-webkit-backdrop-filter:blur(35px);border-radius:29px;border:1px solid rgba(212,234,208,.39)}
-.moss-card-back strong{font-size:2.2rem}.moss-card-back>span{font:400 1rem/1.5 Georgia,serif}
-.moss-flip-close{font:400 .84rem Georgia,serif;margin-top:auto;color:#f3f6ed;border:1px solid #ffffff42;border-radius:999px;background:#ffffff0b;padding:.35rem .9rem;cursor:pointer}
-.moss-card-front{border:none;background:transparent}
-.moss-card-hint{display:none!important}
+.moss-card-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .85s linear}
+.moss-card.flipped .moss-card-inner{transform:rotateY(180deg)}
+.moss-card-front,.moss-card-back{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:29px}
+.moss-card-front{border:none;background:none;opacity:0}
+.moss-card-back{transform:rotateY(180deg);background:rgba(var(--card-tint),.17);border:1px solid rgba(236,251,229,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);box-shadow:0 14px 38px #0005;padding:24px 20px;text-align:center;gap:1.1rem;text-shadow:0 1px 8px rgba(4,20,9,.8)}
+.moss-card-back small{font:400 .65rem/1.5 Georgia,serif;letter-spacing:.15em;color:var(--card-text)}
+.moss-card-back strong{font:400 2.2rem Georgia,serif;letter-spacing:.15em}
+.moss-card-back>span{font:400 1rem/1.5 Georgia,serif}
+.moss-flip-trigger{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:rgba(var(--card-tint),.35);border:1px solid rgba(225,241,218,.3);border-radius:999px;color:#fff;padding:.47rem 1.05rem;white-space:nowrap;letter-spacing:.06em;font:400 .86rem Georgia,serif;pointer-events:auto;cursor:pointer;z-index:9}
+.moss-flip-trigger:hover{background:rgba(var(--card-tint),.58)}
+.moss-card.flipped .moss-flip-trigger{opacity:0;pointer-events:none}
+.moss-flip-close{font:400 .84rem Georgia,serif;margin-top:auto;color:var(--card-text);border:1px solid #ffffff42;border-radius:999px;background:#ffffff0b;padding:.35rem .9rem;cursor:pointer}
+.moss-flip-trigger:focus-visible,.moss-flip-close:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.moss-card-leaf{position:absolute;left:18%;top:28%;width:18px;height:9px;background:#8fae85;border-radius:100% 0;opacity:0;pointer-events:none}
+.moss-card[data-scent="original"] .moss-card-leaf{background:#d7a154}
+.moss-card[data-scent="silt"] .moss-card-leaf{background:#c7e5f4;border-radius:50% 50% 50% 0;width:9px;height:13px}
+.moss-card[data-scent="veil"] .moss-card-leaf{background:#e8f3f8;border-radius:50%;filter:blur(2px);width:24px;height:8px}
+.moss-card.turning .moss-card-leaf{animation:moss-swish .85s ease-out}
+@keyframes moss-swish{15%{opacity:.8}80%{opacity:.5;transform:translate(-35px,-25px) rotate(-50deg)}100%{opacity:0;transform:translate(-45px,-35px) rotate(-65deg)}}
+.scent-clean-background{position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;transition:opacity .46s cubic-bezier(.45,0,.55,1)}
+.scent-clean-background img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.aura-nature.scent-photo-active .scent-clean-background{opacity:1}
+@media(max-width:700px){
+ .moss-card{top:51%;width:clamp(180px,56vw,260px);height:min(54svh,470px)}
+ .moss-card-back{padding:22px 18px;gap:.7rem}
+ .moss-card-back small{font-size:.56rem;letter-spacing:.1em}
+ .moss-card-back strong{font-size:1.85rem;letter-spacing:.11em}
+ .moss-card-back>span{font-size:clamp(.83rem,3.4vw,1rem)}
+ .moss-flip-trigger{font-size:.78rem;padding:.48rem .85rem}
+ .moss-flip-close{padding:.55rem .85rem;min-height:40px}
 }
-/* Mobile placeholder only: separately refine after review */
-@media(max-width:700px){.moss-flip-trigger{position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);z-index:8;pointer-events:auto;background:#173c2d8c;border:1px solid #fff5;border-radius:99px;color:#fff;padding:.45rem .7rem;white-space:nowrap}.moss-card-stage{position:absolute;inset:0}.moss-flip-close{margin-top:auto;border:1px solid #fff6;background:transparent;color:#fff;padding:.4rem .8rem;border-radius:99px}.moss-card.flipped .moss-flip-trigger{opacity:0;pointer-events:none}}
-
-/* MOSS forest-only background revealed before card turn */
-.moss-no-bottle-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;opacity:0;pointer-events:none;transition:opacity .38s ease;display:none}
-@media(min-width:701px){
-.aura-nature.aura-show-moss .moss-no-bottle-bg{display:block}
-.aura-nature.aura-show-moss.moss-photo-active .moss-no-bottle-bg{opacity:1}
-.moss-card{z-index:4}
-.moss-flip-trigger{z-index:9}
-.moss-card-back{background:rgba(31,65,44,.17)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;border:1px solid rgba(236,251,229,.55)!important;text-shadow:0 1px 8px rgba(4,20,9,.8)}
-}
-@media(max-width:700px){.moss-no-bottle-bg{display:none!important}}
-
-/* MOSS timing fix: reveal clean forest during the flip, not before it */
-@media(min-width:701px){
-.moss-no-bottle-bg{transition:opacity .58s ease-in-out!important}
-.moss-card-front{background:linear-gradient(130deg,rgba(30,65,43,0),rgba(26,58,38,.68) 40%,rgba(26,58,38,.7) 65%,rgba(30,65,43,0))!important;opacity:0;transition:opacity .16s ease}
-.moss-card.flipped .moss-card-front{opacity:1}
-}
-
-/* MOSS midpoint flip: do not expose bottle vanishing before/after flip */
-@media(min-width:701px){
-.aura-nature.aura-show-moss .moss-no-bottle-bg{transition:opacity .045s linear!important}
-.moss-card-inner{transition:transform .85s linear!important}
-.moss-card-front{opacity:0!important;background:none!important}
-}
-
-/* Closing MOSS: soften reappearance instead of instant swap */
-@media(min-width:701px){.aura-nature.aura-show-moss .moss-no-bottle-bg{transition:opacity .34s ease-in-out!important}}
-
-/* MOSS: overlap reverse flip with gentle return of video */
-@media(min-width:701px){.aura-nature.aura-show-moss .moss-no-bottle-bg{transition:opacity .46s cubic-bezier(.45,0,.55,1)!important}}
+@media(max-height:550px) and (min-width:701px){.moss-card-back{padding:15px 18px;gap:.65rem}.moss-card-back strong{font-size:1.8rem}.moss-card-back>span{font-size:.85rem}.moss-card-back small{font-size:.55rem}}
+@media(prefers-reduced-motion:reduce){.moss-card-inner,.scent-clean-background{transition:none}.moss-card-leaf{animation:none!important}}

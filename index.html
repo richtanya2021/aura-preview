@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#E9E4D8">
   <meta name="description" content="AURA — учебный концепт арт-парфюмерного бренда. Четыре воображаемых аромата и пространство для ощущений.">
   <title>AURA — Art Perfume</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261012-cards">
+  <script src="script.js?v=20261012-cards" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -29,7 +29,7 @@
   <main id="main">
     <section class="aura-experience" id="experience" aria-label="Миры AURA">
       <div class="aura-world aura-city" id="aura-city">
-        <picture class="aura-poster"><source media="(max-width: 700px)" srcset="AURA — четыре состояния природы посреди мегаполиса mobil.png"><img src="AURA — четыре состояния природы посреди мегаполиса web.png" alt="" aria-hidden="true"></picture>
+        <picture class="aura-poster"><source media="(max-width: 700px)" srcset="AURA%20%E2%80%94%20%D1%87%D0%B5%D1%82%D1%8B%D1%80%D0%B5%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F%20%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%8B%20%D0%BF%D0%BE%D1%81%D1%80%D0%B5%D0%B4%D0%B8%20%D0%BC%D0%B5%D0%B3%D0%B0%D0%BF%D0%BE%D0%BB%D0%B8%D1%81%D0%B0%20mobil.png"><img src="AURA — четыре состояния природы посреди мегаполиса web.png" alt="" aria-hidden="true"></picture>
         <video class="aura-city-video aura-video-desktop" autoplay muted loop playsinline preload="metadata" poster="AURA — четыре состояния природы посреди мегаполиса web.png" aria-hidden="true"><source src="AURA_город_desktop_LOOP_TEST.mp4" type="video/mp4"></video>
         <video class="aura-city-video aura-video-mobile" autoplay muted loop playsinline preload="metadata" poster="AURA — четыре состояния природы посреди мегаполиса mobil.png" aria-hidden="true"><source src="AURA_город_mobile_LOOP_TEST.mp4" type="video/mp4"></video>
         <div class="aura-city-title"><span>AURA / ART PERFUME</span><h1>Природа за пределами реальности.</h1><p>Выбери аромат</p></div>
@@ -53,8 +53,11 @@
         <video class="aura-extra-video aura-extra-original aura-extra-mobile" muted loop playsinline preload="none" poster="ORIGINALmobil.png" aria-hidden="true"><source src="ORIGINAL — The Golden Memory mobil.mp4" type="video/mp4"></video>
         <video class="aura-extra-video aura-extra-veil aura-extra-desktop" muted loop playsinline preload="none" poster="VEIL web.png" aria-hidden="true"><source src="VEIL — The Weightless Passage gemini web.mp4" type="video/mp4"></video>
         <video class="aura-extra-video aura-extra-veil aura-extra-mobile" muted loop playsinline preload="none" poster="VEIL mobil.png" aria-hidden="true"><source src="VEIL — The Weightless Passage gemini mobil.mp4" type="video/mp4"></video>
-<img class="moss-no-bottle-bg" src="MOSS web без флакона.png" alt="" aria-hidden="true">
-        <div id="moss-card" class="moss-card" hidden><button type="button" class="moss-flip-trigger" id="moss-flip-trigger" aria-expanded="false">Узнать аромат <span aria-hidden="true">↻</span></button><div class="moss-card-stage"><div class="moss-card-inner"><div class="moss-card-front" aria-hidden="true"></div><div class="moss-card-back"><small>AURA / BOTANICAL</small><strong>MOSS</strong><span>Глубина зелёного пространства после тихого ливня. Влажная листва, прохлада и мягкая тень джунглей.</span><button class="moss-flip-close" id="moss-flip-close" type="button">↶ Закрыть</button></div></div></div><i class="moss-card-leaf" aria-hidden="true"></i></div>
+<picture class="scent-clean-background" aria-hidden="true">
+          <source id="scent-clean-mobile" media="(max-width: 700px)" srcset="MOSS%20mobil%20%D0%B1%D0%B5%D0%B7%20%D1%84%D0%BB%D0%B0%D0%BA%D0%BE%D0%BD%D0%B0.png">
+          <img id="scent-clean-image" src="MOSS web без флакона.png" alt="">
+        </picture>
+        <div id="moss-card" class="moss-card" data-scent="moss" hidden><button type="button" class="moss-flip-trigger" id="moss-flip-trigger" aria-expanded="false" aria-controls="scent-description">Узнать аромат <span aria-hidden="true">↻</span></button><div class="moss-card-stage"><div class="moss-card-inner"><div class="moss-card-front" aria-hidden="true"></div><div class="moss-card-back" id="scent-description" aria-hidden="true" inert><small>AURA / BOTANICAL</small><strong>MOSS</strong><span>Глубина зелёного пространства после тихого ливня. Влажная листва, прохлада и мягкая тень джунглей.</span><button class="moss-flip-close" id="moss-flip-close" type="button">↶ Закрыть</button></div></div></div><i class="moss-card-leaf" aria-hidden="true"></i></div>
         <button type="button" class="aura-back" id="aura-back" aria-label="Вернуться к четырём ароматам">← <span>Назад к коллекции</span></button>
         <p class="aura-nature-name" id="aura-nature-name">ORIGINAL</p>
       </div>
